@@ -22,7 +22,7 @@ To download our dataset, follow the next steps:
 To evaluate different state-of-the-art methods, we chose to use 5 different metrics: the absolute relative error (Abs Rel), the squared relative error (Sq Rel), the root-mean-square-error (RMSE), the root-mean-square error on the logarithm (RMSE log) and a scale invariant metric called SILog. The evaluation code computes the average metric between the predictions using a method and the ground truths from our dataset. 
 To use our evaluation code, simply run the following command:
 ```
-python challenge.py  --sport <foot|basket> --path_pred </path/to/predictions>  --gt_path </path/to/gt>
+python evaluation.py  --sport <foot|basket> --path_pred </path/to/predictions>  --gt_path </path/to/gt>
 ```
 All the arguments are mandatory. 
 - **--gt_path**: Path to the directory that contains the ground truths depth maps. 
