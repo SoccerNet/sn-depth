@@ -19,6 +19,7 @@ If you are interested for more information, refer to the paper:
 ## SoccerNet-Depth dataset 
 To download our dataset, follow the next steps:
 ## Evaluation code
+The files associated to this evaluation code can be found [here](./evaluation/).
 To evaluate different state-of-the-art methods, we chose to use 5 different metrics: the absolute relative error (Abs Rel), the squared relative error (Sq Rel), the root-mean-square-error (RMSE), the root-mean-square error on the logarithm (RMSE log) and a scale invariant metric called SILog. The evaluation code computes the average metric between the predictions using a method and the ground truths from our dataset. 
 To use our evaluation code, simply run the following command:
 ```
