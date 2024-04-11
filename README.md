@@ -21,25 +21,29 @@ To download our dataset, follow the next steps:
 ## Evaluation code
 The files associated to this evaluation code can be found [here](./evaluation/).
 To evaluate different state-of-the-art methods, we chose to use 5 different metrics: the absolute relative error (Abs Rel), the squared relative error (Sq Rel), the root-mean-square-error (RMSE), the root-mean-square error on the logarithm (RMSE log) and a scale invariant metric called SILog. The evaluation code computes the average metric between the predictions using a method and the ground truths from our dataset. 
+
 To use our evaluation code, simply run the following command:
 ```
 python evaluation.py  --sport <foot|basket> --path_pred </path/to/predictions>  --gt_path </path/to/gt>
 ```
+
 All the arguments are mandatory. 
 - **--gt_path**: Path to the directory that contains the ground truths depth maps. 
 - **--path_pred**: Path to the predictions. Make sure to save your predictions as 16-bits PNG files with pixel depth values between 0 and 65,535.
 - **--sport**: either foot or basket
+
 Since the code sorts the predictions and ground truths alphabetically, make sure that the files from a pair are given a name that will ensure a correct ordering.  
 
 ## Extraction code
+The files associated to this evaluation code can be found [here](./extraction/).
 The scripts extract the depth information from the games NBA2K22 and EFootball in an automated fashion. Despite their important similarities a distinct script is provided for each game. This is mainly explained by the fact that the game menus are different and required tailored actions. 
 To run the code for Efootball, enter the following command:
 ```
-python botPes.py
+python script_2K.py
 ```
 To run the code for NBA2K22, enter the following command:
 ```
-python bot2k.py
+python script_efootball.py
 ```
 
 The code included in this repository is the version that we used for our project. As such, it is tailored to our specific setup, which consists of two monitors, each with a resolution of 1920x1080. To facilitate data extraction, we opted to run the game on the left side of the screen, while Nvidia Nsight was positioned on the right side. Both software applications were run in full-screen mode.
