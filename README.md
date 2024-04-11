@@ -17,6 +17,43 @@ If you are interested for more information, refer to the paper:
 <img src="./images/graphical_abstract.jpg" width="700">
 
 ## SoccerNet-Depth dataset 
+The dataset structure can be observed in the following representation:
+```
+SoccerNet-Depth/
+├── Efootball/
+│ ├── Train/
+│ | ├── game_1.ext
+| | | |── video_1
+| | | | | |── color
+| | | | | |── 1.png
+| | | | | |── ...
+| | | | | |── n.png
+| | | | |── depth 
+| | | | | |── 1.png
+| | | | | |── ...
+| | | | | |── n.png
+| | | | |── depth_r 
+| | | | | |── 1.png
+| | | | | |── ...
+| | | | | |── n.png
+| | | | |── depth_buffer
+| | | | | |── 1.csv
+| | | | | |── ...
+| | | | | |── n.csv
+| | | |── ...
+| | | |── video_i
+| | | | |── ...
+| | |── ...
+│ | ├── game_m.ext
+| │ | ├── ...
+│ ├── Test/
+| │ ├── ...
+│ └── Validation/
+| │ ├── ...
+└── Nba2K22/
+│ ├── ...
+```
+
 To download our dataset, follow the next steps:
 ## Evaluation code
 The files associated to this evaluation code can be found [here](./evaluation/).
@@ -65,14 +102,13 @@ For further information check out our [paper](URL).
 Please cite our work if you use our dataset or code:
 
 ```bibtex
-@InProceedings{Leduc2024SoccerNet-Depth,
-    author    = {Leduc, Arnaud and Cioppa, Anthony and Giancola, Silvio and  Ghanem, Bernard and Van Droogenbroeck, Marc},
-    title     = {{SoccerNet-Depth}: a Scalable Dataset for Monocular Depth Estimation in Sports Videos},
-    booktitle = cvsports,
-    month     = Jun,
-    year      = {2024},
-    publisher = ieee,
-    address = seattle,
-    pages     = {}
+@inproceedings{Leduc2024SoccerNetDepth,
+        title = {{SoccerNet-Depth}: a Scalable Dataset for Monocular Depth Estimation in Sports Videos},
+        author = {Leduc, Arnaud and Cioppa, Anthony and Giancola, Silvio and Ghanem, Bernard and Van Droogenbroeck, Marc},
+        booktitle = cvsports,
+        month = Jun,
+        year = {2024},
+        address = city-seattle,
+        keywords = {}
 }
 ```
