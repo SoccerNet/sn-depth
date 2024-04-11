@@ -24,7 +24,7 @@ SoccerNet-Depth/
 │ ├── Train/
 │ | ├── game_1.ext
 | | | |── video_1
-| | | | | |── color
+| | | | |── color
 | | | | | |── 1.png
 | | | | | |── ...
 | | | | | |── n.png
