@@ -45,7 +45,7 @@ def main():
     if args.sport == "basket":
         mask[870:1016, 1570:1829] = 0
     
-    with open('/home/aleduc/test_score.txt', 'r') as f:
+    with open('test_score.txt', 'r') as f:
         file_contents = f.read().splitlines()
 
     mask.to(device).squeeze()
