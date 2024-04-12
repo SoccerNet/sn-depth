@@ -9,7 +9,7 @@ This repository contains:
 
 - **SoccerNet-Depth**: A new synthetic dataset for monucular depth estimation in sports videos.
 - **Evaluation code**: The evaluation code used to benchmark the dataset using 5 state-of-the-art methods.
-- **Automated extraction code**: The code used to extract autonomously the depth data from the games leveraging the Nvidia Nsight software as well as [PyAutoGUI](https://github.com/asweigart/pyautogui), [PyDirectInput] (https://github.com/learncodebygaming/pydirectinput), and [ImageSearch](https://github.com/drov0/python-imagesearch/blob/master/README.md).
+- **Automated extraction code**: The code used to extract autonomously the depth data from the games leveraging the Nvidia Nsight software as well as [PyAutoGUI](https://github.com/asweigart/pyautogui), [PyDirectInput](https://github.com/learncodebygaming/pydirectinput), and [ImageSearch](https://github.com/drov0/python-imagesearch/blob/master/README.md).
 
 If you are interested for more information, refer to the paper:
 [Paper](URL)
