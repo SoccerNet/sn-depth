@@ -9,10 +9,10 @@ This repository contains:
 
 - **SoccerNet-Depth**: A new synthetic dataset for monucular depth estimation in sports videos.
 - **Evaluation code**: The evaluation code used to benchmark the dataset using 5 state-of-the-art methods.
-- **Automated extraction code**: The code used to extract autonomously the depth data from the games leveraging the Nvidia Nsight software as well as PyAutoGUI, PyDirectInput, and ImageSearch.
+- **Automated extraction code**: The code used to extract autonomously the depth data from the games leveraging the Nvidia Nsight software as well as [PyAutoGUI](https://github.com/asweigart/pyautogui), [PyDirectInput] (https://github.com/learncodebygaming/pydirectinput), and [ImageSearch](https://github.com/drov0/python-imagesearch/blob/master/README.md).
 
 If you are interested for more information, refer to the paper:
-[Link Text](URL)
+[Paper](URL)
 
 <img src="./images/graphical_abstract.jpg" width="700">
 
@@ -54,9 +54,10 @@ SoccerNet-Depth/
 │ ├── ...
 ```
 
-To download our dataset, follow the next steps:
+Instructions to access the dataset will be soon available. Stay tuned !
 ## Evaluation code
-The files associated to this evaluation code can be found [here](./evaluation/).
+The files associated to this evaluation code can be found [here](./evaluation/). 
+
 To evaluate different state-of-the-art methods, we chose to use 5 different metrics: the absolute relative error (Abs Rel), the squared relative error (Sq Rel), the root-mean-square-error (RMSE), the root-mean-square error on the logarithm (RMSE log) and a scale invariant metric called SILog. The evaluation code computes the average metric between the predictions using a method and the ground truths from our dataset. 
 
 To use our evaluation code, simply run the following command:
@@ -69,16 +70,18 @@ All the arguments are mandatory.
 - **--path_pred**: Path to the predictions. Make sure to save your predictions as 16-bits PNG files with pixel depth values between 0 and 65,535.
 - **--sport**: either foot or basket
 
-Since the code sorts the predictions and ground truths alphabetically, make sure that the files from a pair are given a name that will ensure a correct ordering.  
+Since the code sorts the predictions and ground truths alphabetically, make sure that the files from a pair gt/prediction are given a name that will ensure a correct ordering.  
 
 ## Extraction code
 The files associated to this evaluation code can be found [here](./extraction/).
-The scripts extract the depth information from the games NBA2K22 and EFootball in an automated fashion. Despite their important similarities a distinct script is provided for each game. This is mainly explained by the fact that the game menus are different and required tailored actions. 
-To run the code for Efootball, enter the following command:
+
+The scripts extract the depth information from the games NBA2K22 and EFootball in an automated fashion. Despite their important similarities a distinct script is provided for each game. This is mainly explained by the fact that the game menus are different and required tailored actions.
+
+To run the code for NBA2K22, enter the following command:
 ```
 python script_2K.py
 ```
-To run the code for NBA2K22, enter the following command:
+To run the code for Efootball, enter the following command:
 ```
 python script_efootball.py
 ```
