@@ -17,7 +17,7 @@ If you are interested for more information, refer to the paper:
 <img src="./images/graphical_abstract.jpg" width="700">
 
 ## SoccerNet-Depth dataset 
-The dataset structure can be observed in the following representation:
+The dataset structure is designed as follows:
 ```
 SoccerNet-Depth/
 ├── Efootball/
@@ -54,7 +54,32 @@ SoccerNet-Depth/
 │ ├── ...
 ```
 
-Instructions to access the dataset will be soon available. Stay tuned !
+As a first step, follow this [link](https://pypi.org/project/SoccerNet/) to obtain the instructions to download SoccerNet pip package.
+
+A quick summary of those instructions is:
+```
+conda create -n SoccerNet python pip
+conda activate SoccerNet
+pip install SoccerNet==0.1.57
+```
+
+Once this is done, use the following lines to access our data:
+```
+from SoccerNet.Downloader import SoccerNetDownloader
+mySoccerNetDownloader=SoccerNetDownloader(LocalDirectory="path/to/SoccerNet")
+mySoccerNetDownloader.downloadDataTask(task="depth-basketball", split=["train","valid","test"]) # to access the basketball part of the dataset
+mySoccerNetDownloader.downloadDataTask(task="depth-football", split=["train","valid","test"]) # to access the football part of the dataset
+```
+
+In total, the dataset encompasses a total of $12{,}398$ frames, split following a $60$/$20$/$20$ distribution with each game only appearing in one set. 
+For football, there are $7{,}073$ football frames in total, $4{,}071$ for training, $1{,}423$ for testing, and $1{,}579$ for the validation set. 
+For basketball, we provide a total of 
+$5{,}325$ basketball frames, $3{,}270$ for training, $1{,}064$ for testing, and $991$ for validation.
+
+All RGB images and depth maps are at a resolution of $1080p$. Examples of video sequences that constitute the dataset is given hereafter:
+<img src="./images/Data_examples.png" width="700">
+
+
 ## Evaluation code
 The files associated to this evaluation code can be found [here](./evaluation/). 
 
