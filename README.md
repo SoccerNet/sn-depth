@@ -2,14 +2,14 @@
 
 
 *SoccerNet-Depth* is the largest public dataset to provide depth estimation from team sports videos, with *12.4K* frames. Unlike other MDE sport datasets, SoccerNet-Depth contains scene-centric data from in-match scenarios. 
-The dataset contains synthetic video sequences that makes it valuable for temporally consistent depth estimation. The color-depth pairs are collected from two popular video games, *NBA2K22 and EFootball*, through an automated extcraction process. 
+The dataset contains synthetic video sequences that makes it valuable for temporally consistent depth estimation. The color-depth pairs are collected from two popular video games, *NBA2K22 and EFootball*, through an automated extraction process. 
 The synthetic nature and automated extraction process makes the dataset scalable and the methodology transferable to any other sports video game.
 
 This repository contains:
 
 - **SoccerNet-Depth**: A new synthetic dataset for monucular depth estimation in sports videos.
 - **Evaluation code**: The evaluation code used to benchmark the dataset using 5 state-of-the-art methods.
-- **Automated extraction code**: The code used to extract autonomously the depth data from the games leveraging the Nvidia Nsight software as well as [PyAutoGUI](https://github.com/asweigart/pyautogui), [PyDirectInput](https://github.com/learncodebygaming/pydirectinput), and [ImageSearch](https://github.com/drov0/python-imagesearch/blob/master/README.md).
+- **Automated extraction code**: The code used to extract autonomously the depth data from the games leveraging the NVIDIA Nsight Graphics software as well as [PyAutoGUI](https://github.com/asweigart/pyautogui), [PyDirectInput](https://github.com/learncodebygaming/pydirectinput), and [ImageSearch](https://github.com/drov0/python-imagesearch/blob/master/README.md).
 
 If you are interested for more information, refer to the paper:
 [Paper](URL)
@@ -54,7 +54,7 @@ SoccerNet-Depth/
 │ ├── ...
 ```
 
-As a first step, follow this [link](https://pypi.org/project/SoccerNet/) to obtain the instructions to download SoccerNet pip package.
+As a first step, follow this [link](https://pypi.org/project/SoccerNet/) to obtain the instructions to download the SoccerNet pip package.
 
 A quick summary of those instructions is:
 ```
@@ -63,7 +63,7 @@ conda activate SoccerNet
 pip install SoccerNet==0.1.57
 ```
 
-Once this is done, use the following lines to access our data:
+Once this is done, use the following lines to access our data. Football and basketball data are downloaded separatey.
 ```
 from SoccerNet.Downloader import SoccerNetDownloader
 mySoccerNetDownloader=SoccerNetDownloader(LocalDirectory="path/to/SoccerNet")
@@ -84,7 +84,7 @@ All RGB images and depth maps are at a resolution of $1080p$. Examples of video 
 ## Evaluation code
 The files associated to this evaluation code can be found [here](./evaluation/). 
 
-To evaluate different state-of-the-art methods, we chose to use 5 different metrics: the absolute relative error (Abs Rel), the squared relative error (Sq Rel), the root-mean-square-error (RMSE), the root-mean-square error on the logarithm (RMSE log) and a scale invariant metric called SILog. The evaluation code computes the average metric between the predictions using a method and the ground truths from our dataset. 
+To evaluate different state-of-the-art methods, we chose to use 5 different metrics: the absolute relative error (Abs Rel), the squared relative error (Sq Rel), the root-mean-square-error (RMSE), the root-mean-square error on the logarithm (RMSE log) and a scale invariant metric called SILog. The evaluation code computes the average metric between the predictions obtained using a method and the ground truths from our dataset. 
 
 To use our evaluation code, simply run the following command:
 ```
@@ -112,14 +112,14 @@ To run the code for Efootball, enter the following command:
 python script_efootball.py
 ```
 
-The code included in this repository is the version that we used for our project. As such, it is tailored to our specific setup, which consists of two monitors, each with a resolution of 1920x1080. To facilitate data extraction, we opted to run the game on the left side of the screen, while Nvidia Nsight was positioned on the right side. Both software applications were run in full-screen mode.
+The code included in this repository is the version that we used for our project. As such, it is tailored to our specific setup, which consists of two monitors, each with a resolution of 1920x1080. To facilitate data extraction, we opted to run the game on the left side of the screen, while NVIDIA Nsight was positioned on the right side. Both software applications were run in full-screen mode.
 
 To customize the code to your specific setup, we have included an auxiliary file named check_pos.py. This file contains a function that allows you to determine the pixel location of the elements you wish to automate a particular action with, like a click on a button for example.
 To use this function, run the following command:
 ```
 python check_pos.py
 ```
-Then, once it is launched, move your mouse to the object you want to retrieve the pixel location, and press your *Enter* key. This will output a (x,y) value corresponding to the pixel location. 
+Then, once it is launched, move your mouse to the object you want to retrieve the pixel location, and press your *Enter* key. This will output a (x,y) value corresponding to the pixel location that you can specify to the method that requires it.
 
 ## License
 ...
