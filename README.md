@@ -71,13 +71,13 @@ mySoccerNetDownloader.downloadDataTask(task="depth-basketball", split=["train","
 mySoccerNetDownloader.downloadDataTask(task="depth-football", split=["train","valid","test"]) # to access the football part of the dataset
 ```
 
-In total, the dataset encompasses a total of $12{,}398$ frames, split following a $60$/$20$/$20$ distribution with each game only appearing in one set. 
+In total, the dataset encompasses a total of $12{,}398$ frames, split following a $60/20/20$ distribution with each game only appearing in one set. 
 For football, there are $7{,}073$ football frames in total, $4{,}071$ for training, $1{,}423$ for testing, and $1{,}579$ for the validation set. 
 For basketball, we provide a total of 
 $5{,}325$ basketball frames, $3{,}270$ for training, $1{,}064$ for testing, and $991$ for validation.
 
 All RGB images and depth maps are at a resolution of $1080p$. Examples of video sequences that constitute the dataset is given hereafter:
-<img src="./images/Data_examples.png" width="700">
+<img src="./images/Data_examples.jpg" width="700">
 
 
 ## Evaluation code
