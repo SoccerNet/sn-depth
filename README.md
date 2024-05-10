@@ -78,7 +78,7 @@ $5{,}325$ basketball frames, $3{,}270$ for training, $1{,}064$ for testing, and 
 
 All RGB images and depth maps are at a resolution of $1080p$. Examples of video sequences that constitute the dataset is given hereafter:
 
-<img src="./images/Data_examples.jpg" width="500">
+<img src="./images/Data_examples.jpg" width="800">
 
 
 ## Evaluation code
