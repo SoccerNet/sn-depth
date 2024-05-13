@@ -34,7 +34,7 @@ def main():
         for video_number in range(1, VIDEOS_PER_GAME + 1):
             video_folder = setup_folders(master, game_number, video_number)
             time.sleep(3)
-            for _ in range (15):
+            for _ in range (20):
                 extract_and_store_frames(video_folder, first_call)
                 time.sleep(3) 
                 pyautogui.click(x=2507, y=58) # Resume game

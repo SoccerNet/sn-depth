@@ -9,19 +9,21 @@ import cv2
 import numpy as np
 import mss
 
-# Load the images into memory to avoid loading it into memory each time image_search() is called #
-cursor_path = r'C:\Users\telim\OneDrive\Desktop\Templates\CURSOR.png'
-depth_bis_path = r'C:\Users\telim\OneDrive\Desktop\Templates\depth_right.png' 
-end_game = r'C:\Users\telim\OneDrive\Desktop\Templates\end_pes_true.png'
+current_folder = os.path.dirname(os.path.abspath(__file__))
+
+cursor_path = os.path.join(current_folder, '..', 'Templates', 'CURSOR.png')
+depth_bis_path = os.path.join(current_folder, '..', 'Templates', 'depth_right.png')
+end_game_path = os.path.join(current_folder, '..', 'Templates', 'end_pes_true.png')
 
 cursor_template = cv2.imread(cursor_path, 0) 
 depth_bis_template = cv2.imread(depth_bis_path, 0) 
+end_game_template = cv2.imread(end_game_path, 0)
 
 # =======================================================================================================
 # ================= Principal method extracting repeatedly the color and depth data =====================
 # =======================================================================================================
 
-def extract_and_store_frames(video_folder, first_call, frame_count= 40):
+def extract_and_store_frames(video_folder, first_call, frame_count= 60):
     pydirectinput.click(x=886,y=440) # Clicks on the game screen 
     pydirectinput.press('f11') # Captures the frame
     time.sleep(10)

@@ -12,10 +12,13 @@ import mss
 
 
 # Load the images into memory to avoid loading it into memory each time image_search() is called #
-cursor_path = r'C:\Users\telim\OneDrive\Desktop\Templates\CURSOR.png'
-depth_path = r'C:\Users\telim\OneDrive\Desktop\Templates\depth_revisions.png'
-depth_bis_path = r'C:\Users\telim\OneDrive\Desktop\Templates\depth_right.png' 
-end_game_path = r'C:\Users\telim\OneDrive\Desktop\Templates\end_game.png'
+current_folder = os.path.dirname(os.path.abspath(__file__))
+
+cursor_path = os.path.join(current_folder, '..', 'Templates', 'CURSOR.png')
+depth_path = os.path.join(current_folder, '..', 'Templates', 'depth_revisions.png')
+depth_bis_path = os.path.join(current_folder, '..', 'Templates', 'depth_right.png')
+end_game_path = os.path.join(current_folder, '..', 'Templates', 'end_game.png')
+
 cursor_template = cv2.imread(cursor_path, 0) 
 depth_bis_template = cv2.imread(depth_bis_path, 0) 
 depth_path_template = cv2.imread(depth_path,0)
@@ -39,7 +42,6 @@ def extract_and_store_frames(video_folder,first_call, frame_count= 100):
   
 
     for _ in range(frame_count):
-
         # Saves the color image #
         x,y = 3277, 245
         time.sleep(1.5)

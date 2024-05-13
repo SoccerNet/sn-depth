@@ -112,7 +112,7 @@ To run the code for Efootball, enter the following command:
 python script_efootball.py
 ```
 
-The code included in this repository is the version that we used for our project. As such, it is tailored to our specific setup, which consists of two monitors, each with a resolution of 1920x1080. To facilitate data extraction, we opted to run the game on the left side of the screen, while NVIDIA Nsight was positioned on the right side. Both software applications were run in full-screen mode.
+The code included in this repository is the version that we used for our project. As such, it is tailored to our specific setup, which consists of two monitors, one on the left at $1920 x 1080$ and the other one at $1680 x 1050$. To facilitate data extraction, we opted to run the game on the left side of the screen, while NVIDIA Nsight was positioned on the right side. Both software applications were run in full-screen mode.
 
 To customize the code to your specific setup, we have included an auxiliary file named check_pos.py. This file contains a function that allows you to determine the pixel location of the elements you wish to automate a particular action with, like a click on a button for example.
 To use this function, run the following command:
@@ -120,6 +120,12 @@ To use this function, run the following command:
 python check_pos.py
 ```
 Then, once it is launched, move your mouse to the object you want to retrieve the pixel location, and press your *Enter* key. This will output a (x,y) value corresponding to the pixel location that you can specify to the method that requires it.
+
+Before launching the script, it is necessary to launch Steam using the connection option of Nvidia Nsight. From there, you can launch the video games you want to extract frames from and Nvidia Nsight will be connected, through Steam, to the game. When launching the game, make sure that you don't put the "Command Prompt" interface at the location of the first automated click (on our case, at the middle right of the right screen) as it would lead to unexpected behaviour.
+
+For Efootball, launch the script when you are on the "Trial Match" menu. For "NBA2k22", the script can be launched as soon as you gain access of the menus.
+
+Also, the code excludes the buffers associated to the color images and the depth maps. These buffers take a significant amount of place that can fill up your hard disk pretty fast and lead to running issues. Therefore, it is beneficial to use a external disk to store the data extracted and remove periodically data saved from your hard disk.
 
 ## License
 ...
