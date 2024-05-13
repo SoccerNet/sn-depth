@@ -112,7 +112,7 @@ To run the code for Efootball, enter the following command:
 python script_efootball.py
 ```
 
-The code included in this repository is the version that we used for our project. As such, it is tailored to our specific setup, which consists of two monitors, one on the left at $1920 x 1080$ and the other one at $1680 x 1050$. To facilitate data extraction, we opted to run the game on the left side of the screen, while NVIDIA Nsight was positioned on the right side. Both software applications were run in full-screen mode.
+The code included in this repository is the version that we used for our project. As such, it is tailored to our specific setup, which consists of two monitors, one on the left at $1920 \times 1080$ and the other one at $1680 \times 1050$. To facilitate data extraction, we opted to run the game on the left side of the screen, while NVIDIA Nsight was positioned on the right side. Both software applications were run in full-screen mode.
 
 To customize the code to your specific setup, we have included an auxiliary file named check_pos.py. This file contains a function that allows you to determine the pixel location of the elements you wish to automate a particular action with, like a click on a button for example.
 To use this function, run the following command:
