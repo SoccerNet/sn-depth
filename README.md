@@ -12,7 +12,7 @@ This repository contains:
 - **Automated extraction code**: The code used to extract autonomously the depth data from the games leveraging the NVIDIA Nsight Graphics software as well as [PyAutoGUI](https://github.com/asweigart/pyautogui), [PyDirectInput](https://github.com/learncodebygaming/pydirectinput), and [ImageSearch](https://github.com/drov0/python-imagesearch/blob/master/README.md).
 
 If you are interested for more information, refer to the paper:
-[Paper](URL)
+[Paper](https://orbi.uliege.be/handle/2268/316221?&locale=en)
 
 <img src="./images/graphical_abstract.jpg" width="700">
 
@@ -132,7 +132,7 @@ Also, the code excludes the buffers associated to the color images and the depth
 
 ## Citation
 
-For further information check out our [paper](URL).
+For further information check out our [paper](https://orbi.uliege.be/handle/2268/316221?&locale=en).
 
 Please cite our work if you use our dataset or code:
 
