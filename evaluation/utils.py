@@ -21,7 +21,7 @@ class ImageDataset(Dataset):
         return self.transform(img)
 
 """
-The following two classes, RunningAverage and RunningAverageDict, comes from ZoeDepth and has been written by author Shariq Farooq Bhat
+The following classes have been adapted from ZoeDepth to our application. It has originally been written by author Shariq Farooq Bhat.
 """
 class RunningAverage:
     def __init__(self):
@@ -71,7 +71,6 @@ def compute_scale_and_shift(prediction, target, mask):
         prediction (torch.Tensor): Predicted values.
         target (torch.Tensor): Ground truth values.
         mask (torch.Tensor): Mask that indicates the zones to evaluate. 
-        prediction.shape, target.shape and mask.shape should be equal.
 
     Returns:
         tuple: Tuple containing the following:
@@ -112,7 +111,6 @@ def compute_errors(gt, pred):
     Args:
         gt (numpy.ndarray): Ground truth values.
         pred (numpy.ndarray): Predicted values.
-        gt.shape should be equal to pred.shape
 
     Returns:
         dict: Dictionary containing the following metrics:
@@ -149,7 +147,6 @@ def compute_metrics(gt, pred, mask_score, sport):
         gt (torch.Tensor): Ground truth values.
         sport (str): The sport to evaluate the predictions on. Can be "basket" or "foot".
         mask_score (bool): Whether to mask the score area in football images.
-        pred.shape and gt.shape should be equal.
 
     Returns:
         dict: Dictionary containing the error metrics computed by the 'compute_errors' function, 
