@@ -21,7 +21,7 @@ class ImageDataset(Dataset):
         return self.transform(img)
 
 """
-The following classes have been adapted from ZoeDepth to our application. It has originally been written by author Shariq Farooq Bhat.
+The following classes and methods have been adapted from ZoeDepth to our application. It has originally been written by author Shariq Farooq Bhat.
 """
 class RunningAverage:
     def __init__(self):
