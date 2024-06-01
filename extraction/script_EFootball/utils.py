@@ -100,7 +100,24 @@ def extract_and_store_frames(video_folder, first_call, frame_count= 60):
 # =======================================================================================================
 # ================= Methods to analyse screen and interact with the NVIDIA NSight tool ==================
 # =======================================================================================================
+'''
+The following code has been adapted from the original codebase of the python_imagesearch library to fit the needs of the project.
+The original codebase can be found at: https://github.com/drov0/python-imagesearch/blob/master/README.md
 
+MIT License
+
+Copyright (c) 2017 drov0
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+'''
 def imagesearch_in_memory(template, precision=0.8):
     is_retina = False
     with mss.mss() as sct:
