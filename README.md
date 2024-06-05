@@ -125,7 +125,7 @@ Before launching the script, it is necessary to launch Steam using the connectio
 
 For Efootball, launch the script when you are on the "Trial Match" menu. For "NBA2k22", the script can be launched as soon as you gain access of the menus.
 
-Also, the code excludes the buffers associated to the color images and the depth maps. These buffers take a significant amount of place that can fill up your hard disk pretty fast and lead to running issues. Therefore, it is beneficial to use a external disk to store the data extracted and remove periodically data saved from your hard disk.
+Also, the code includes the buffers associated to the color images and the depth maps. These buffers take a significant amount of place that can fill up your hard disk pretty fast and lead to running issues. Therefore, it is beneficial to use a external disk to store the data extracted and remove periodically data saved from your hard disk.
 
 ## License
 ...
