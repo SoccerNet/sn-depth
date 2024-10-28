@@ -55,15 +55,3 @@ The evaluation code calculates these metrics to compare depth estimations from t
 - **TBD:** CVSports Workshop at CVPR 2025 (awards ceremony).
 
 For questions or concerns, please open an issue in the repository or contact us on [Discord](https://discord.gg/SM8uHj9mkP).
-
-## Challenge
-This work contributes to the SoccerNet project. We are pleased to announce that, this year again, the SoccerNet challenges will be organized and, this time, Monocular Depth Estimation will be one of the 4 tasks proposed !
-
-The objective of the task will be to assign, to each pixel of each frame of a team sports video sequence, a depth value. The different depth maps reconstructed will then be compared to the ground truth obtained from two video games. 
-A new challenge set of data will be extracted in the same way as the already provided data for this challenge. To evaluate the different methods, we will use the 5 same metrics mentioned above. 
-
-We hope to see new methods built to enhance the baseline and bring the field even further ! Be creative, and enjoy the journey!
-
-To have more information: [SoccerNet challenges](https://www.soccer-net.org/tasks)
-[Depth Challenge](https://www.soccer-net.org/tasks/monocular-depth-estimation) 
-![image](https://github.com/user-attachments/assets/ea0eb063-d122-4288-b17b-c1a0db1ff42b)
