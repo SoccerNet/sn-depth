@@ -15,7 +15,8 @@ The Monocular Depth Estimation dataset includes **7,073 frames** from football v
 
 - Training: 4,071 frames  
 - Validation: 1,579 frames  
-- Testing: 1,423 frames  
+- Testing: 1,423 frames
+- Challenge: TBD
 
 ## Evaluation Metrics
 
