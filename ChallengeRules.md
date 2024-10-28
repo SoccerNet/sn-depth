@@ -13,10 +13,9 @@ To learn more, visit: [SoccerNet Challenges](https://www.soccer-net.org/tasks)
 
 The Monocular Depth Estimation dataset includes **7,073 frames** from football videos, split into training, testing, and validation sets in a 60/20/20 distribution. Each game appears in only one set to ensure separation.
 
-- **Football Frames**: 7,073 frames  
-  - Training: 4,071 frames  
-  - Testing: 1,423 frames  
-  - Validation: 1,579 frames  
+- Training: 4,071 frames  
+- Validation: 1,579 frames  
+- Testing: 1,423 frames  
 
 ## Evaluation Metrics
 
