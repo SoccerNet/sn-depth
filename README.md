@@ -125,7 +125,20 @@ Before launching the script, it is necessary to launch Steam using the connectio
 
 For Efootball, launch the script when you are on the "Trial Match" menu. For "NBA2k22", the script can be launched as soon as you gain access of the menus.
 
-Also, the code includes the buffers associated to the color images and the depth maps. These buffers take a significant amount of place that can fill up your hard disk pretty fast and lead to running issues. Therefore, it is beneficial to use a external disk to store the data extracted and remove periodically data saved from your hard disk.
+Also, the code includes the buffers associated to the color images and the depth maps. These buffers take a significant amount of place that can fill up your hard disk pretty fast and lead to running issues. Therefore, it is beneficial to use a external disk to store the data extracted and remove periodically data saved from your hard disk.Ch 
+
+## Challenge
+This work contributes to the SoccerNet project. We are pleased to announce that, this year again, the SoccerNet challenges will be organized and, this time, Monocular Depth Estimation will be one of the 4 tasks proposed !
+
+The objective of the task will be to assign, to each pixel of each frame of a team sports video sequence, a depth value. The different depth maps reconstructed will then be compared to the ground truth obtained from two video games. 
+A new challenge set of data will be extracted in the same way as the already provided data for this challenge. To evaluate the different methods, we will use the 5 same metrics mentioned above. 
+
+We hope to see new methods built to enhance the baseline and bring the field even further ! Be creative, and enjoy the journey!
+
+To have more information: [SoccerNet challenges](https://www.soccer-net.org/tasks)
+[Depth Challenge](https://www.soccer-net.org/tasks/monocular-depth-estimation) 
+
+
 
 ## License
 ...

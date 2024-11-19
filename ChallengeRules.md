@@ -30,6 +30,14 @@ To assess the effectiveness of depth estimation methods, we use the following fi
 
 The evaluation code calculates these metrics to compare depth estimations from the proposed methods against the ground truth data.
 
+It is necessary to respect the following format for naming the different predictions: if it is the prediction for the x th frames of video y from football game z, it should be named *foot_game_z_video_y_depth_r_x.png*. 
+
+Furthermore, the depth maps need to be saved as 16-bit PNG files. Before being saved, the depth maps are normalized within the range of 0 to 1 and then multiplied
+by 65,535. 
+
+Finally, depth maps must be such that the smaller values for the pixels corresponds to the closest point to the camera and inversely.
+
+
 ## Participation Rules
 
 - Open to anyone except the organizers.
