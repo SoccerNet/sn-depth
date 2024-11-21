@@ -56,10 +56,10 @@ Finally, depth maps must be such that the smaller values for the pixels correspo
 
 *Note: Dates are tentative and subject to change.*
 
-- **TBD:** Open evaluation server on the test set.
-- **TBD:** Open evaluation server on the challenge set.
-- **TBD:** Close evaluation server.
-- **TBD:** Report submission deadline.
+- **November 20:** Open evaluation server on the test set.
+- **November 20:** Open evaluation server on the challenge set.
+- **April 24:** Close evaluation server.
+- **May 1:** Report submission deadline.
 - **TBD:** CVSports Workshop at CVPR 2025 (awards ceremony).
 
 For questions or concerns, please open an issue in the repository or contact us on [Discord](https://discord.gg/SM8uHj9mkP).
