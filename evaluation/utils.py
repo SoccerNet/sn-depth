@@ -17,8 +17,12 @@ class ImageDataset(Dataset):
         img = Image.open(self.image_files[idx])
         img_mode = img.mode
         if img.mode != 'I':
-            raise ValueError(f"Image {self.image_files[idx]} is not a 16-bit PNG image")
-        return self.transform(img)
+            # raise ValueError(f"Image {self.image_files[idx]} is not a 16-bit PNG image")
+            img = img.convert('I')
+        img_data = np.array(img)
+        tensor = torch.from_numpy(img_data).float()
+        return tensor
+        #return self.transform(img)
 
 """
 Licence MIT
