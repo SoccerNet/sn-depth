@@ -104,7 +104,7 @@ All RGB images and depth maps are at a resolution of $1080p$. Examples of video 
 
 You can follow the instructions within the [baseline](baseline) folder. The baseline is based on ZoeDepth trained on our SoccerNet-Depth dataset.
 
-For inference, you will need to download the [model weights]() and to store them at the root of the ZoeDepth folder.
+For inference, you will need to download the [model weights](https://drive.google.com/file/d/1GLt5lk6To8muqf9eoV_dspchqSMKobV1/view?usp=sharing) and to store them at the root of the ZoeDepth folder.
 
 Finally, you can use the infer_soccernet.py function to make the inference (remember to change the path names for the dataset and predictions).
 
