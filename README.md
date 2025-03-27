@@ -1,20 +1,30 @@
 # SoccerNet-Depth
 
 
-*SoccerNet-Depth* is the largest public dataset to provide depth estimation from team sports videos, with *12.4K* frames. Unlike other MDE sport datasets, SoccerNet-Depth contains scene-centric data from in-match scenarios. 
-The dataset contains synthetic video sequences that makes it valuable for temporally consistent depth estimation. The color-depth pairs are collected from two popular video games, *NBA2K22 and EFootball*, through an automated extraction process. 
+*SoccerNet-Depth* is the largest public dataset for Monocular Depth Estimation (MDE) in team sports videos, with *12.4K* frames. Unlike other MDE sport datasets, SoccerNet-Depth contains scene-centric data from in-match scenarios. 
+The dataset contains synthetic video sequences for temporally consistent depth estimation. The color-depth image pairs are collected from two popular video games, *NBA2K22 and EFootball*, through an automated extraction process. 
 The synthetic nature and automated extraction process makes the dataset scalable and the methodology transferable to any other sports video game.
 
 This repository contains:
 
 - **SoccerNet-Depth**: A new synthetic dataset for monucular depth estimation in sports videos.
-- **Evaluation code**: The evaluation code used to benchmark the dataset using 5 state-of-the-art methods.
+- **Baseline**: The inference code to run a baseline based on ZoeDepth (code comes from https://github.com/isl-org/ZoeDepth/tree/main). We provide the code and the model weights to run the inference on the test and challenge sets of SoccerNet-Depth.
+- **Evaluation code**: The evaluation code used to benchmark the dataset.
 - **Automated extraction code**: The code used to extract autonomously the depth data from the games leveraging the NVIDIA Nsight Graphics software as well as [PyAutoGUI](https://github.com/asweigart/pyautogui), [PyDirectInput](https://github.com/learncodebygaming/pydirectinput), and [ImageSearch](https://github.com/drov0/python-imagesearch/blob/master/README.md).
 
-If you are interested for more information, refer to the paper:
+If you are interested in more information, please refer to our paper:
 [Paper](https://orbi.uliege.be/handle/2268/316221?&locale=en)
 
 <img src="./images/graphical_abstract.jpg" width="700">
+
+## SoccerNet 2025 Monocular Depth Estimation Challenge
+
+The 2025 SoccerNet Monocular Depth Estimation Challenge is only using the football data of SoccerNet-Depth. Please refer to the [Challenge Rules](ChallengeRules.md) for more details.
+
+The evaluation servers can be accessed here: [Test Phase](https://www.codabench.org/competitions/4876/) and [Challenge Phase](https://www.codabench.org/competitions/6864)
+
+
+For more information, please refer to: [SoccerNet challenges](https://www.soccer-net.org/challenges/2025) and [Depth Challenge](https://www.soccer-net.org/tasks/monocular-depth-estimation) 
 
 ## SoccerNet-Depth dataset 
 The dataset structure is designed as follows:
@@ -56,23 +66,33 @@ SoccerNet-Depth/
 
 As a first step, follow this [link](https://pypi.org/project/SoccerNet/) to obtain the instructions to download the SoccerNet pip package.
 
-A quick summary of those instructions is:
+First, create the conda environment:
 ```
 conda create -n SoccerNet python pip
 conda activate SoccerNet
-pip install SoccerNet==0.1.57
+pip install SoccerNet --upgrade
+pip install huggingface_hub --upgrade
 ```
 
-Once this is done, use the following lines to access our data. Football and basketball data are downloaded separatey.
+Once this is done, use the following lines to access our challenge data. 
 ```
+
 from SoccerNet.Downloader import SoccerNetDownloader
 mySoccerNetDownloader=SoccerNetDownloader(LocalDirectory="path/to/SoccerNet")
+mySoccerNetDownloader.downloadDataTask(task="depth-2025", split=["train","valid","test","challenge"]) # to access the 2025 challenge part of the dataset
+```
+
+You can also seperately download the football and basketball data.
+
+```
+
 mySoccerNetDownloader.downloadDataTask(task="depth-basketball", split=["train","valid","test"]) # to access the basketball part of the dataset
 mySoccerNetDownloader.downloadDataTask(task="depth-football", split=["train","valid","test"]) # to access the football part of the dataset
+
 ```
 
 In total, the dataset encompasses a total of $12{,}398$ frames, split following a $60/20/20$ distribution with each game only appearing in one set. 
-For football, there are $7{,}073$ football frames in total, $4{,}071$ for training, $1{,}423$ for testing, and $1{,}579$ for the validation set. 
+For football, there are $9{,}668$ football frames in total, $4{,}071$ for training, $1{,}423$ for testing,  $1{,}579$ for the validation set, and $2{,}615$ for the challenge set. 
 For basketball, we provide a total of 
 $5{,}325$ basketball frames, $3{,}270$ for training, $1{,}064$ for testing, and $991$ for validation.
 
@@ -80,6 +100,13 @@ All RGB images and depth maps are at a resolution of $1080p$. Examples of video 
 
 <img src="./images/Data_examples.jpg" width="800">
 
+## Using the baseline
+
+You can follow the instructions within the [baseline](baseline) folder. The baseline is based on ZoeDepth trained on our SoccerNet-Depth dataset.
+
+For inference, you will need to download the [model weights]() and to store them at the root of the ZoeDepth folder.
+
+Finally, you can use the infer_soccernet.py function to make the inference (remember to change the path names for the dataset and predictions).
 
 ## Evaluation code
 The files associated to this evaluation code can be found [here](./evaluation/). 
@@ -127,21 +154,10 @@ For Efootball, launch the script when you are on the "Trial Match" menu. For "NB
 
 Also, the code includes the buffers associated to the color images and the depth maps. These buffers take a significant amount of place that can fill up your hard disk pretty fast and lead to running issues. Therefore, it is beneficial to use a external disk to store the data extracted and remove periodically data saved from your hard disk.Ch 
 
-## Challenge
-This work contributes to the SoccerNet project. We are pleased to announce that, this year again, the SoccerNet challenges will be organized and, this time, Monocular Depth Estimation will be one of the 4 tasks proposed !
-
-The objective of the task will be to assign, to each pixel of each frame of a team sports video sequence, a depth value. The different depth maps reconstructed will then be compared to the ground truth obtained from two video games. 
-A new challenge set of data will be extracted in the same way as the already provided data for this challenge. To evaluate the different methods, we will use the 5 same metrics mentioned above. 
-
-We hope to see new methods built to enhance the baseline and bring the field even further ! Be creative, and enjoy the journey!
-
-To have more information: [SoccerNet challenges](https://www.soccer-net.org/tasks)
-[Depth Challenge](https://www.soccer-net.org/tasks/monocular-depth-estimation) 
-
 
 
 ## License
-...
+GPL-v3
 
 ## Citation
 
